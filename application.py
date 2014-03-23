@@ -5,7 +5,7 @@ app = Flask(__name__)
 def homepage():
 
     context = {
-        'title': 'Homepage'
+        'title': 'Dion Gerritsen'
     }
 
     return render_template('homepage.html', context=context)
