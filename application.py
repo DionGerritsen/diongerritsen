@@ -1,21 +1,23 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
+
+
 
 @app.route('/')
 def homepage():
 
-    context = {
-        'title': 'Dion Gerritsen'
-    }
+    if request.url_root != 'http://127.0.0.1:5000/':
+        template = 'homepage.html'
+        context = {
+            'title': 'Dion Gerritsen'
+        }
+    else:
+        template = 'dashboard.html'
+        context = {
+            'title': '1347 VP'
+        }
 
-    return render_template('homepage.html', context=context)
-
-
-@app.route('/dashboard/')
-def dashboard():
-    context = {}
-
-    return render_template('dashboard.html', context=context)
+    return render_template(template, context=context)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
