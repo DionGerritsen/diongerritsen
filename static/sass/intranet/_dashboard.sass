@@ -1,0 +1,32 @@
+body
+  @include bg64()
+  background-size: cover
+  background-position: right center
+  background-repeat: no-repeat
+
+.next-lesson
+  margin-top: 50px
+  h2
+    display: inline-block
+    padding: 10px
+
+    background: rgba(0,0,0,0.4)
+    color: #ffffff
+    font-size: 3em
+    @media all and (max-width: 640px)
+      width: 100%
+  p:first-of-type
+    color: #333
+    font-size: 2em
+    font-weight: 700
+    padding: 10px
+  p:last-of-type
+    font-size: 1.1em
+    font-style: italic
+    padding: 0 10px
+
+  @media all and (max-width: 640px)
+    width: 100%
+    margin-top: 0
+    padding: 10px
+    background: #ffffff
