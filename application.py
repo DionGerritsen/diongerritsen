@@ -1,12 +1,15 @@
-from flask import Flask, render_template, request
+import re
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 
 
 @app.route('/')
 def homepage():
+    
+    route = request.url_root
 
-    if request.url_root != 'http://127.0.0.1:5000/':
+    if not "1347" in route:
         template = 'homepage.html'
         context = {
             'title': 'Dion Gerritsen'
